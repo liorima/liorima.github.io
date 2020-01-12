@@ -16,7 +16,7 @@
     <meta name="description" content="" />
     
     <title>
-      about - Liori&#39;s Blog
+      【LeetCode】141-环形链表 - Liori&#39;s Blog
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -28,6 +28,11 @@
 	
     <canvas id='pagemap'></canvas>
 	
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解题思路"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol>
+    </div>
     
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
@@ -74,7 +79,7 @@
           标签
         </a>
         
-        <a href="/about" class="current">
+        <a href="/about" class="">
           关于
         </a>
         
@@ -124,7 +129,7 @@
             标签
           </a>
           
-          <a href="/about" class="current">
+          <a href="/about" class="">
             关于
           </a>
           
@@ -156,26 +161,55 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title">about</div>
+      <div class="title">【LeetCode】141-环形链表</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
-          <span>2019/12/25</span>
+          <span>2020/01/13</span>
         </span>
 
         
 
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/Code">Code</a>
+                
+              
+          </span>
+        </span>
         
         
-        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/数据结构与算法">数据结构与算法</a>
+                  
+                
+                  
+                    <a href="/tags/LeetCode">LeetCode</a>
+                  
+                
+            </span>
+          </span>
+         
       </div>
       <div>
       </div>
     </div>
-    <html><head></head><body><blockquote>
-<p>心再静些，静到一闭眼就能听到万物呼吸的声音。眉目舒展，将心胸也无限扩大，直到连天地也包得下。愿低调从容。</p>
+    <html><head></head><body><p><a href="https://leetcode-cn.com/problems/linked-list-cycle/" target="_blank" rel="noopener">环形链表</a></p>
+<h3 id="题目">题目<a class="post-anchor" href="#题目"></a></h3><p>给定一个链表，判断链表中是否有环。 </p>
+<blockquote>
+<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。<br><br>示例 1:<br>输入：head = [3,2,0,-4], pos = 1<br>输出：true<br>解释：链表中有一个环，其尾部连接到第二个节点。<br><br>示例 2:<br>输入：head = [1,2], pos = 0<br>输出：true<br>解释：链表中有一个环，其尾部连接到第一个节点。<br><br> 示例 3：<br>输入：head = [1], pos = -1<br>输出：false<br>解释：链表中没有环。<br><br>进阶：<br>你能用 O(1)（即，常量）内存解决此问题吗？ </p>
 </blockquote>
-</body></html>
+<h3 id="解题思路">解题思路<a class="post-anchor" href="#解题思路"></a></h3><p>这道题目可以用快慢指针解决。<br><br>快指针每次走 2 步，慢指针每次走 1 步。如果快指针追上慢指针，则说明链表中存在环（就像 2 个人在操场上跑步，一个跑得快，一个跑得慢，跑得快的那个最终一定会追上慢的那个）。</p>
+<h3 id="代码">代码<a class="post-anchor" href="#代码"></a></h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 使用快慢指针，快指针每次走2步，慢指针每次走1步，如果快指针追上了慢指针，则说明存在环</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>{</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) {</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span> && fast.next != <span class="keyword">null</span>) {</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            <span class="keyword">if</span> (fast == slow) {</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></body></html>
 
   
     <div class="post-reward">
@@ -214,7 +248,7 @@
       本文作者：<a href="https://liorima.github.io">Liori</a>
     </div>
     <div class="link">
-      永久链接：<a href="https://liorima.github.io/about/index.html">https://liorima.github.io/about/index.html</a>
+      永久链接：<a href="https://liorima.github.io/2020/01/13/%E3%80%90LeetCode%E3%80%91141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-1/">https://liorima.github.io/2020/01/13/%E3%80%90LeetCode%E3%80%91141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-1/</a>
     </div>
     <div class="declare">
       版权声明：本文首发于<a href="https://liorima.github.io">Liori</a>的博客，转载请注明出处！
