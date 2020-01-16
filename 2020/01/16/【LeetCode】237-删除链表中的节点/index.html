@@ -16,7 +16,7 @@
     <meta name="description" content="" />
     
     <title>
-      Tags - Liori&#39;s Blog
+      【LeetCode】237-删除链表中的节点 - Liori&#39;s Blog
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -28,6 +28,11 @@
 	
     <canvas id='pagemap'></canvas>
 	
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解题思路"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol>
+    </div>
     
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
@@ -70,7 +75,7 @@
           分类
         </a>
         
-        <a href="/tags" class="current">
+        <a href="/tags" class="">
           标签
         </a>
         
@@ -120,7 +125,7 @@
             分类
           </a>
           
-          <a href="/tags" class="current">
+          <a href="/tags" class="">
             标签
           </a>
           
@@ -153,78 +158,114 @@
     </div>
     <div id="container">
       <div class="main animated bounceInRight delay-0.7s">
-        <div id="archives">
-    
-        <div class="title">
-            Tags - 数据结构与算法
-        </div>
-    
-
-
-
-
-    
-    
-    <section class="wrap">
-        <div class="meta">
-            <a href="/archives/2020" >
-                2020
-            </a>
-        </div>
-        <div class="year">
-            
-            <article class="item">
-            <a href="/2020/01/16/%E3%80%90LeetCode%E3%80%91237-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/" title="【LeetCode】237-删除链表中的节点">
-                <span>2020/01/16</span>
-                <span>【LeetCode】237-删除链表中的节点</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/15/LeetCode%E3%80%91160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/" title="【LeetCode】160-相交链表">
-                <span>2020/01/15</span>
-                <span>【LeetCode】160-相交链表</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/14/eetCode%E3%80%9121-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="【LeetCode】21-合并两个有序链表">
-                <span>2020/01/14</span>
-                <span>【LeetCode】21-合并两个有序链表</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/13/%E3%80%90LeetCode%E3%80%91142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II/" title="【LeetCode】142-环形链表II">
-                <span>2020/01/13</span>
-                <span>【LeetCode】142-环形链表II</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/13/%E3%80%90LeetCode%E3%80%91141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-1/" title="【LeetCode】141-环形链表">
-                <span>2020/01/13</span>
-                <span>【LeetCode】141-环形链表</span>
-            </a>
-            </article>
-            
-    
-        </div>
-    </section>
+        <article class="post-entry">
+    <div class="header">
       
-<div class="paginator">
-    <span class="page-number current">1</span>
-</div>
-</div>
+      <div class="title">【LeetCode】237-删除链表中的节点</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/01/16</span>
+        </span>
 
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/Code">Code</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/数据结构与算法">数据结构与算法</a>
+                  
+                
+                  
+                    <a href="/tags/LeetCode">LeetCode</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p><a href="https://leetcode-cn.com/problems/delete-node-in-a-linked-list/" target="_blank" rel="noopener">删除链表中的节点</a></p>
+<h3 id="题目">题目<a class="post-anchor" href="#题目"></a></h3><p>请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。</p>
+<blockquote>
+<p>示例 1:<br>输入: head = [4,5,1,9], node = 5<br>输出: [4,1,9]<br>解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.<br>示例 2:<br>输入: head = [4,5,1,9], node = 1<br>输出: [4,5,9]<br>解释: 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.<br>说明:<br>链表至少包含两个节点。<br>链表中所有节点的值都是唯一的。<br>给定的节点为非末尾节点并且一定是链表中的一个有效节点。<br>不要从你的函数中返回任何结果。   </p>
+</blockquote>
+<h3 id="解题思路">解题思路<a class="post-anchor" href="#解题思路"></a></h3><p>这道题目实在是有些坑，看完描述心中呵呵，一个 for 循环找到待删除的节点，再将待删除的节点的上一节点的 next 指向待删除节点的下一节点，这不就搞定了吗，简单！一看代码，怎么入参只有一个啊，懵圏半天。</p>
+<p>这就是这道题目需要注意的一个地方，实际上入参只有一个待删除节点的引用，也就是说，我们不知道待删除节点的上一个节点，也就无法将它的 next 指向待删除节点的下一节点。</p>
+<p>问题不大，换个思路就是。</p>
+<p>既然我们拿到的是待删除节点的引用，也就是说，待删除节点及其后面关联的节点，我们都有。此外题目中还指明待删除节点是一个非末尾结点、链表至少包含两个节点。</p>
+<p>假设我们拿到的待删除节点是 4->5->6，我们要删除 4，那么只要用待删除节点的后一个节点的值覆盖待删除节点（此时变成5->5->6）,再将待删除节点的 next 指向待删除节点的后一个节点的后一个节点即可（即 4 的 next 指向 6，此时变成 5->6, 5）。</p>
+<h3 id="代码">代码<a class="post-anchor" href="#代码"></a></h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode node)</span> </span>{</span><br><span class="line">        node.val = node.next.val;</span><br><span class="line">        node.next = node.next.next;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/01/15/LeetCode%E3%80%91160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/">【LeetCode】160-相交链表</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://liorima.github.io">Liori</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="https://liorima.github.io/2020/01/16/%E3%80%90LeetCode%E3%80%91237-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/">https://liorima.github.io/2020/01/16/%E3%80%90LeetCode%E3%80%91237-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://liorima.github.io">Liori</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
         <footer>
           <div class="copyright">
             ©2019-2020
